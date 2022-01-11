@@ -3,9 +3,7 @@
 
 import collections
 import re
-
-from typing import Optional, List
-
+from typing import List, Optional
 
 # valid section names as defined in build/parseSpec.c in RPM source
 SECTION_NAMES = [
@@ -158,7 +156,7 @@ class Sections(collections.UserList):
             s: String to parse.
 
         Returns:
-            Constructed instance of Sections class.
+            Constructed instance of `Sections` class.
         """
         section_name_regexes = [
             re.compile(fr"^%{re.escape(n)}\b.*") for n in SECTION_NAMES
